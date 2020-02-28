@@ -9,14 +9,18 @@ public class Task1 {
 
             String string1 = "aab";
             String string2 = "aba";
+            String string3="aab";
 
             HashMap<Character, Integer> map1
                     = new HashMap<Character, Integer>();
             HashMap<Character, Integer> map2
                     = new HashMap<Character, Integer>();
+            HashMap<Character, Integer> map3
+                = new HashMap<Character, Integer>();
 
             char array1[] = string1.toCharArray();
             char array2[] = string2.toCharArray();
+            char array3[] = string3.toCharArray();
 
             for (int i = 0; i < array1.length; i++) {
 
@@ -36,15 +40,26 @@ public class Task1 {
 
                 }
             }
+        for (int t = 0; t < array3.length; t++) {
+            if (map3.get(array3[t]) == null) {
+                map3.put(array3[t], 1);
+            } else {
+                Integer f = map3.get(array3[t]);
+                map3.put(array3[t], ++f);
+
+            }
+        }
 
 
             System.out.println(map1);
             System.out.println(map2);
+        System.out.println(map3);
             System.out.println(array1);
             System.out.println(array2);
+        System.out.println(array3);
 
-            if (map1.equals(map2)){
-                System.out.println("map1"+map1 + "is anagram with "+ "map2"+map2);
+            if (map1.equals(map2)&map2.equals(map3)){
+                System.out.println("map1"+map1 + "is anagram with "+ "map2" +"anagram with"+" map3"+map3);
             }
             else {
                 System.out.println("map1"+map1 + "is not anagram with "+ "map2"+map2);
